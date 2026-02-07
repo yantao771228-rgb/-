@@ -1,0 +1,515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1894.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'PingFang SC'}
+    span.s1 {font: 12.0px 'PingFang SC'}
+    span.s2 {font: 12.0px 'Lucida Grande'}
+    span.s3 {font: 12.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-CN"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;<span class="s1">视途设计</span> | <span class="s1">品牌数字资产库</span>&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com "&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300 ;400;500;700;900&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css " /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: 'Inter', sans-serif; background: #fff; color: #000; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.accent-red { color: #FF0000; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bg-accent-red { background-color: #FF0000; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.text-gray-adobe { color: #707070; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.border-gray-light { border-color: #E5E5E5; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tight-heading { letter-spacing: -0.02em; line-height: 1.1; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.nav-scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #E5E5E5; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary { background: #000; color: #fff; transition: all 0.3s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary:hover { background: #FF0000; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-secondary { border: 1px solid #000; color: #000; transition: all 0.3s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-secondary:hover { background: #000; color: #fff; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-red { background: #FF0000; color: #fff; transition: all 0.3s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-red:hover { background: #000; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.price-tag { position: absolute; top: -12px; right: 20px; background: #FF0000; color: white; padding: 4px 12px; font-size: 11px; font-weight: bold; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.float-wechat { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #07C160; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer; z-index: 999; transition: transform 0.3s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.float-wechat:hover { transform: scale(1.1); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal.active { display: flex; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-content { background: white; padding: 40px; max-width: 500px; width: 90%; position: relative; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.close-btn { position: absolute; top: 20px; right: 20px; font-size: 24px; cursor: pointer; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.swiper { width: 100%; height: 600px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.swiper-slide { display: flex; align-items: center; justify-content: center; background: #000; position: relative; overflow: hidden; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.swiper-pagination-bullet-active { background: #FF0000 !important; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="antialiased"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">导航（全站统一）</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-6 px-8 md:px-16 flex justify-between items-center bg-white transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="index.html" class="text-2xl font-bold tracking-tight"&gt;<span class="s1">视途设计</span> &lt;span class="text-sm font-normal text-gray-adobe ml-2"&gt;BRAND ARCHITECT&lt;/span&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hidden md:flex space-x-8 text-sm font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="index.html" class="hover:text-red-600"&gt;<span class="s1">首页</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="services.html" class="hover:text-red-600"&gt;<span class="s1">服务</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="cases.html" class="hover:text-red-600"&gt;<span class="s1">案例</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="about.html" class="hover:text-red-600"&gt;<span class="s1">关于</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="contact.html" class="hover:text-red-600"&gt;<span class="s1">联系</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button onclick="openModal('diagnosis-modal')" class="btn-red px-6 py-3 text-sm font-bold uppercase"&gt;<span class="s1">免费品牌体检</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Hero --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="pt-32 pb-20 px-8 md:px-16 min-h-screen flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1 class="tight-heading text-6xl md:text-8xl font-black mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">基于数据</span>&lt;br&gt;&lt;span class="accent-red"&gt;<span class="s1">验证</span>&lt;/span&gt;<span class="s1">的</span>&lt;br&gt;<span class="s1">品牌资产</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-xl text-gray-adobe mb-8 leading-relaxed max-w-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">不是模板，是品牌数字资产库。</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">用</span>3000+<span class="s1">案例的验证数据，</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">为你的品牌匹配最优溢价路径。</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex gap-4 mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="openModal('diagnosis-modal')" class="btn-primary px-8 py-4 text-sm font-bold uppercase"&gt;<span class="s1">预约品牌体检</span> <span class="s2">→</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="openModal('download-modal')" class="btn-secondary px-8 py-4 text-sm font-bold uppercase"&gt;<span class="s1">下载服务手册</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- <span class="s1">五维度标签</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex gap-6 text-sm text-gray-adobe border-t border-gray-light pt-8 flex-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;&lt;div class="text-lg font-bold text-black"&gt;<span class="s1">实用</span>&lt;/div&gt;&lt;div&gt;<span class="s1">产品好卖</span>&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;&lt;div class="text-lg font-bold text-black"&gt;<span class="s1">情绪</span>&lt;/div&gt;&lt;div&gt;<span class="s1">用户喜欢</span>&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;&lt;div class="text-lg font-bold text-black"&gt;<span class="s1">社交</span>&lt;/div&gt;&lt;div&gt;<span class="s1">愿意分享</span>&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;&lt;div class="text-lg font-bold text-black"&gt;<span class="s1">资产</span>&lt;/div&gt;&lt;div&gt;<span class="s1">能估值</span>&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;&lt;div class="text-lg font-bold text-black"&gt;<span class="s1">成长</span>&lt;/div&gt;&lt;div&gt;<span class="s1">可持续</span>&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-gray-100 p-12 border border-gray-light flex flex-col justify-center items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-5xl font-black mb-2"&gt;5D&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-gray-500"&gt;<span class="s1">五维价值评估模型</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- <span class="s1">五边形雷达图</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;svg viewBox="0 0 300 300" class="w-64 h-64"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- <span class="s1">五边形网格</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;polygon points="150,20 280,110 235,260 65,260 20,110" fill="none" stroke="#e5e5e5" stroke-width="1"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;polygon points="150,50 250,120 215,230 85,230 50,120" fill="none" stroke="#e5e5e5" stroke-width="1"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;polygon points="150,80 220,130 195,200 105,200 80,130" fill="none" stroke="#e5e5e5" stroke-width="1"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- <span class="s1">数据区域（示例）</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;polygon points="150,50 250,120 195,200 85,230 50,120" fill="rgba(255,0,0,0.1)" stroke="#FF0000" stroke-width="2"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- <span class="s1">标签</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;text x="150" y="15" text-anchor="middle" font-size="11" font-weight="bold"&gt;<span class="s1">实用价值</span>&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;text x="295" y="110" text-anchor="middle" font-size="11" font-weight="bold"&gt;<span class="s1">情绪价值</span>&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;text x="250" y="280" text-anchor="middle" font-size="11" font-weight="bold"&gt;<span class="s1">社交价值</span>&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;text x="50" y="280" text-anchor="middle" font-size="11" font-weight="bold"&gt;<span class="s1">成长价值</span>&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;text x="5" y="110" text-anchor="middle" font-size="11" font-weight="bold"&gt;<span class="s1">资产价值</span>&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">模块</span>1<span class="s1">：</span>Banner<span class="s1">轮播（案例展示）</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="bg-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="swiper mySwiper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="swiper-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="swiper-slide"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute inset-0 bg-gradient-to-r from-gray-900 to-black opacity-90"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="relative z-10 max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-8 items-center px-8 md:px-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="h-[400px] bg-gray-800 flex items-center justify-center border border-gray-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-gray-500"&gt;<span class="s1">农业礼盒案例大图</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-accent-red font-bold mb-2"&gt;<span class="s1">农业食品</span> · VI<span class="s1">全案</span>+<span class="s1">包装</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h2 class="text-4xl md:text-5xl font-bold mb-6"&gt;<span class="s1">从散装到礼盒</span>&lt;br&gt;<span class="s1">溢价</span>947%<span class="s1">的品牌重塑</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-gray-400 mb-6 text-lg"&gt;<span class="s1">通过品牌数字资产库的</span>"<span class="s1">高端农产品溢价范式</span>"<span class="s1">，将散装大米重新包装为文化礼品。</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="cases.html" class="btn-red px-8 py-3 text-sm font-bold uppercase inline-block"&gt;<span class="s1">查看案例详情</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="swiper-slide"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-900 opacity-90"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="relative z-10 max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-8 items-center px-8 md:px-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="h-[400px] bg-gray-700 flex items-center justify-center border border-gray-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-gray-400"&gt;<span class="s1">科技公司案例大图</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-accent-red font-bold mb-2"&gt;<span class="s1">科技</span>B2B · VI<span class="s1">全案</span>+<span class="s1">官网</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h2 class="text-4xl md:text-5xl font-bold mb-6"&gt;<span class="s1">中标率提升</span>180%&lt;br&gt;ToB<span class="s1">品牌信任构建</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-gray-400 mb-6 text-lg"&gt;<span class="s1">调用数字库</span>"<span class="s1">信任型视觉范式</span>"<span class="s1">，统一官网与</span>PPT<span class="s1">视觉，成功获得天使轮融资。</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="cases.html" class="btn-red px-8 py-3 text-sm font-bold uppercase inline-block"&gt;<span class="s1">查看案例详情</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="swiper-slide"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute inset-0 bg-gradient-to-r from-red-900 to-gray-900 opacity-90"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="relative z-10 max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-8 items-center px-8 md:px-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="h-[400px] bg-gray-800 flex items-center justify-center border border-gray-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-gray-500"&gt;<span class="s1">餐饮连锁案例大图</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-accent-red font-bold mb-2"&gt;<span class="s1">餐饮连锁</span> · <span class="s1">品牌全案</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h2 class="text-4xl md:text-5xl font-bold mb-6"&gt;3<span class="s1">个月拓店</span>5<span class="s1">家</span>&lt;br&gt;<span class="s1">可复制的品牌资产包</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-gray-400 mb-6 text-lg"&gt;<span class="s1">构建标准化品牌资产系统，加盟商认可度提升，品牌估值从</span>100<span class="s1">万增至</span>500<span class="s1">万。</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="cases.html" class="btn-red px-8 py-3 text-sm font-bold uppercase inline-block"&gt;<span class="s1">查看案例详情</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="swiper-pagination"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="swiper-button-next text-white"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="swiper-button-prev text-white"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">    </span>&lt;!-- </span>模块<span class="s3">2</span>：五维度价值理论（独立模块）<span class="s3"> --&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="theory" class="py-24 px-8 md:px-16 bg-gray-50 border-t border-gray-light"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-6xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mb-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="tight-heading text-4xl md:text-5xl font-black mb-4"&gt;<span class="s1">品牌五维价值理论</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-adobe max-w-2xl mx-auto"&gt;</p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">                    </span></span>缺任何一个维度，品牌都是残缺的。我们通过品牌数字资产库，<span class="s3">&lt;br&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">诊断你的品牌在哪个维度存在缺口。</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid md:grid-cols-5 gap-px bg-gray-200 border border-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 text-center hover:bg-gray-50 transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-black text-gray-200 mb-4"&gt;01&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-lg font-bold mb-2"&gt;<span class="s1">实用价值</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-gray-adobe leading-relaxed"&gt;<span class="s1">产品功能清晰度、包装实用性、购买流程顺畅度</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 text-center hover:bg-gray-50 transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-black text-gray-200 mb-4"&gt;02&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-lg font-bold mb-2"&gt;<span class="s1">情绪价值</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-gray-adobe leading-relaxed"&gt;<span class="s1">视觉调性一致性、品牌故事感染力、色彩心理匹配</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 text-center hover:bg-gray-50 transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-black text-gray-200 mb-4"&gt;03&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-lg font-bold mb-2"&gt;<span class="s1">社交价值</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-gray-adobe leading-relaxed"&gt;<span class="s1">传播素材丰富度、</span>UGC<span class="s1">潜力、朋友圈分享欲</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 text-center border-l-4 border-accent-red hover:bg-gray-50 transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-black text-red-100 mb-4"&gt;04&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-lg font-bold mb-2 accent-red"&gt;<span class="s1">资产价值</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-gray-adobe leading-relaxed"&gt;Logo<span class="s1">识别度、</span>VI<span class="s1">系统完整度、品牌溢价能力</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 text-center hover:bg-gray-50 transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-black text-gray-200 mb-4"&gt;05&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-lg font-bold mb-2"&gt;<span class="s1">成长价值</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-gray-adobe leading-relaxed"&gt;<span class="s1">品牌延展性、迭代空间、长期生命力</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mt-12 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="openModal('report-sample')" class="btn-secondary px-8 py-3 text-sm font-bold uppercase mr-4"&gt;<span class="s1">查看示例诊断报告</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="openModal('download-modal')" class="btn-primary px-8 py-3 text-sm font-bold uppercase"&gt;<span class="s1">下载品牌案例手册</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">服务入口（简化版）</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="services" class="py-24 px-8 md:px-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-7xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mb-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="tight-heading text-4xl font-black mb-4"&gt;<span class="s1">服务入口</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-adobe"&gt;<span class="s1">从免费体检到全案落地，匹配不同成长阶段</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid md:grid-cols-3 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="border border-gray-light p-10 text-center hover:border-black transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold mb-2"&gt;<span class="s1">免费品牌体检</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-light text-gray-adobe mb-4"&gt;¥0&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-adobe mb-6"&gt;<span class="s1">五维价值评估报告</span>&lt;br&gt;AI<span class="s1">初筛</span>+<span class="s1">人工复核</span>&lt;br&gt;10<span class="s1">分钟完成</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="openModal('diagnosis-modal')" class="btn-secondary w-full py-3 text-sm font-bold uppercase"&gt;<span class="s1">立即体检</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-black text-white p-10 text-center relative overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute top-0 right-0 bg-accent-red text-white text-xs px-3 py-1 font-bold uppercase"&gt;<span class="s1">推荐</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold mb-2"&gt;VI<span class="s1">全案标准版</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-sm text-gray-500 line-through mb-1"&gt;¥48,000&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-4xl font-bold accent-red mb-4"&gt;¥28,000&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-400 mb-6"&gt;Logo+VI<span class="s1">体系</span>(30<span class="s1">项</span>)&lt;br&gt;<span class="s1">数字触点规范</span>&lt;br&gt;3<span class="s1">个月落地指导</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="openModal('contact-modal')" class="btn-red w-full py-3 text-sm font-bold uppercase"&gt;<span class="s1">锁定优惠价</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="mt-3 text-xs text-gray-500"&gt;<span class="s1">已订</span>13/20<span class="s1">家</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="border border-gray-light p-10 text-center hover:border-black transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold mb-2"&gt;<span class="s1">品牌全案</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-light mb-4"&gt;¥98,000<span class="s1">起</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-adobe mb-6"&gt;<span class="s1">品牌战略定位</span>&lt;br&gt;<span class="s1">全触点设计</span>&lt;br&gt;6<span class="s1">个月顾问陪跑</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="openModal('contact-modal')" class="btn-secondary w-full py-3 text-sm font-bold uppercase"&gt;<span class="s1">预约咨询</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mt-12 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="services.html" class="text-sm font-bold underline hover:text-red-600"&gt;<span class="s1">查看完整服务清单与详细报价</span> <span class="s2">→</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">    </span>&lt;!-- </span>模块<span class="s3">3</span>：经典案例（详细拆解，与轮播不同）<span class="s3"> --&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="cases" class="py-24 px-8 md:px-16 bg-gray-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-7xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-end mb-16 border-b border-gray-light pb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="tight-heading text-4xl md:text-5xl font-black mb-4"&gt;<span class="s1">经典案例拆解</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xl text-gray-adobe"&gt;<span class="s1">深度解析数据驱动的品牌升级路径</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="cases.html" class="btn-secondary px-6 py-3 text-sm font-bold uppercase hidden md:block"&gt;<span class="s1">查看全部案例</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- <span class="s1">案例</span>1<span class="s1">详细</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-20 bg-white border border-gray-light overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid md:grid-cols-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="h-[500px] bg-gray-200 relative overflow-hidden group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-gray-500 font-bold text-lg"&gt;<span class="s1">农业礼盒案例大图</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm"&gt;Before<span class="s1">：散装农产品，论斤卖</span> ¥38/<span class="s1">袋</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm accent-red mt-2"&gt;After<span class="s1">：品牌礼盒装，</span>¥398/<span class="s1">盒，溢价</span>10<span class="s1">倍</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="p-12 flex flex-col justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-xs font-bold text-gray-adobe uppercase tracking-wider mb-4"&gt;<span class="s1">农业食品</span> · <span class="s1">五维价值提升</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-3xl font-bold mb-6"&gt;<span class="s1">某农业集团品牌重塑</span>&lt;/h3&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="space-y-6 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex justify-between text-sm font-bold mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;span&gt;<span class="s1">实用价值</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;span class="text-gray-adobe"&gt;70<span class="s2">→</span>85&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="w-full bg-gray-200 h-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="bg-gray-400 h-2" style="width: 85%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex justify-between text-sm font-bold mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;span&gt;<span class="s1">情绪价值</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;span class="accent-red"&gt;30<span class="s2">→</span>80&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="w-full bg-gray-200 h-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="bg-accent-red h-2" style="width: 80%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex justify-between text-sm font-bold mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;span&gt;<span class="s1">资产价值</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;span class="accent-red"&gt;10<span class="s2">→</span>75&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="w-full bg-gray-200 h-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="bg-accent-red h-2" style="width: 75%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-adobe text-sm mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;strong class="text-black"&gt;<span class="s1">策略核心：</span>&lt;/strong&gt;<span class="s1">基于数字库</span>"<span class="s1">高端农产品溢价范式</span>"<span class="s1">，植入</span>"<span class="s1">土地故事</span>"<span class="s1">情绪价值，</span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">设计新中式礼盒</span>VI<span class="s1">系统，建立从田间到礼盒的品牌资产。</span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex gap-4 text-xs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="border border-gray-300 px-3 py-1"&gt;VI<span class="s1">全案</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="border border-gray-300 px-3 py-1"&gt;<span class="s1">包装设计</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="border border-gray-300 px-3 py-1"&gt;<span class="s1">小程序</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- <span class="s1">案例</span>2<span class="s1">详细</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-20 bg-white border border-gray-light overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid md:grid-cols-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="p-12 flex flex-col justify-center order-2 md:order-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-xs font-bold text-gray-adobe uppercase tracking-wider mb-4"&gt;<span class="s1">科技</span>B2B · <span class="s1">信任构建</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-3xl font-bold mb-6"&gt;<span class="s1">某科技公司品牌升级</span>&lt;/h3&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="space-y-6 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex justify-between text-sm font-bold mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;span&gt;<span class="s1">实用价值</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;span class="text-gray-adobe"&gt;80<span class="s2">→</span>85&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="w-full bg-gray-200 h-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="bg-gray-400 h-2" style="width: 85%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex justify-between text-sm font-bold mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;span&gt;<span class="s1">情绪价值</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;span class="accent-red"&gt;45<span class="s2">→</span>78&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="w-full bg-gray-200 h-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="bg-accent-red h-2" style="width: 78%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex justify-between text-sm font-bold mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;span&gt;<span class="s1">资产价值</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;span class="accent-red"&gt;25<span class="s2">→</span>70&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="w-full bg-gray-200 h-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="bg-accent-red h-2" style="width: 70%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-adobe text-sm mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;strong class="text-black"&gt;<span class="s1">策略核心：</span>&lt;/strong&gt;<span class="s1">调用数字库</span>"ToB<span class="s1">信任型视觉范式</span>"<span class="s1">，构建稳重专业的深蓝</span>+<span class="s1">银灰色彩系统，</span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">统一官网、</span>PPT<span class="s1">、名片触点，建立投资人信任。</span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex gap-4 text-xs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="border border-gray-300 px-3 py-1"&gt;VI<span class="s1">全案</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="border border-gray-300 px-3 py-1"&gt;<span class="s1">官网设计</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="h-[500px] bg-gray-800 relative overflow-hidden group order-1 md:order-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-gray-400 font-bold text-lg"&gt;<span class="s1">科技公司</span>VI<span class="s1">案例图</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center md:hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="cases.html" class="btn-secondary px-8 py-3 text-sm font-bold uppercase w-full inline-block"&gt;<span class="s1">查看全部案例</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">创始人模块（独立）</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="founder" class="py-24 px-8 md:px-16 bg-white border-t border-gray-light"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="aspect-[3/4] bg-gray-100 flex items-center justify-center border border-gray-light"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-gray-400 text-center"&gt;<span class="s1">创始人形象照</span>&lt;br&gt;<span class="s1">（建议黑白专业照）</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="absolute -bottom-6 -right-6 bg-black text-white p-6 shadow-2xl hidden md:block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-black mb-1"&gt;10+&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-sm text-gray-400 mb-4"&gt;<span class="s1">年品牌设计经验</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-black mb-1"&gt;300+&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-sm text-gray-400"&gt;<span class="s1">品牌项目落地</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-accent-red text-sm font-bold tracking-widest uppercase mb-4"&gt;Founder / <span class="s1">创始人</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="tight-heading text-4xl md:text-5xl font-black mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">品牌不是设计，</span>&lt;br&gt;<span class="s1">是商业翻译</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-6 text-gray-adobe leading-relaxed mb-8"&gt;</p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">                    </span>&lt;p&gt;</span>我是视途设计创始人，专注品牌视觉战略<span class="s3">10</span>年。曾任职于北京某知名设计公司，主导过农业、科技、餐饮等多个行业的品牌全案项目。<span class="s3">&lt;/p&gt;</span></p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">                    </span>&lt;p&gt;2023</span>年创立视途设计，建立「品牌数字资产库」<span class="s3">——</span>这不是为了偷懒，是为了把试错成本降下来，把专业度提上去。<span class="s3">&lt;/p&gt;</span></p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">                    </span>&lt;p&gt;</span>我们相信：好的品牌设计不是让客户说<span class="s3">"</span>好看<span class="s3">"</span>，而是让客户的客户说<span class="s3">"</span>值得买<span class="s3">"</span>。<span class="s3">&lt;/p&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="about.html" class="btn-secondary px-6 py-3 text-sm font-bold uppercase"&gt;<span class="s1">了解更多</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="openModal('download-modal')" class="btn-primary px-6 py-3 text-sm font-bold uppercase"&gt;<span class="s1">下载个人案例集</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">联系</span>CTA --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="contact" class="py-24 px-8 md:px-16 bg-black text-white text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-3xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="tight-heading text-4xl md:text-6xl font-black mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span><span class="s1">开始构建你的</span>&lt;br&gt;&lt;span class="accent-red"&gt;<span class="s1">品牌资产</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-xl text-gray-400 mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span><span class="s1">先诊断，再设计。前</span>20<span class="s1">位客户享免费品牌数据扫描，</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>VI<span class="s1">全案限时</span>¥28,000<span class="s1">起（原价</span>¥48,000<span class="s1">）。</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex flex-col sm:flex-row gap-4 justify-center mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="openModal('diagnosis-modal')" class="btn-red px-12 py-4 text-base font-bold uppercase"&gt;<span class="s1">预约免费诊断</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="contact.html" class="border border-white px-12 py-4 text-base font-bold uppercase hover:bg-white hover:text-black transition-colors flex items-center justify-center"&gt;<span class="s1">联系我们</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">悬浮微信</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="float-wechat" onclick="openModal('wechat-modal')" title="<span class="s1">微信咨询</span>"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18z"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">弹窗（统一）</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="diagnosis-modal" class="modal" onclick="closeModal(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content" onclick="event.stopPropagation()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="close-btn" onclick="closeModalById('diagnosis-modal')"&gt;&amp;times;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="text-2xl font-bold mb-2"&gt;<span class="s1">免费品牌体检</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-adobe mb-6"&gt;<span class="s1">五维价值评估（实用</span>/<span class="s1">情绪</span>/<span class="s1">社交</span>/<span class="s1">资产</span>/<span class="s1">成长）</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;form onsubmit="event.preventDefault(); openModal('wechat-modal'); closeModalById('diagnosis-modal');" class="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="text" placeholder="<span class="s1">您的姓名</span>" required class="w-full border border-gray-light p-3 focus:outline-none focus:border-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="text" placeholder="<span class="s1">公司名称</span>" required class="w-full border border-gray-light p-3 focus:outline-none focus:border-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="tel" placeholder="<span class="s1">联系电话</span>" required class="w-full border border-gray-light p-3 focus:outline-none focus:border-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="submit" class="btn-red w-full py-3 text-sm font-bold uppercase"&gt;<span class="s1">提交并添加微信</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="download-modal" class="modal" onclick="closeModal(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content" onclick="event.stopPropagation()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="close-btn" onclick="closeModalById('download-modal')"&gt;&amp;times;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="text-2xl font-bold mb-2"&gt;<span class="s1">下载资料</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;form onsubmit="event.preventDefault(); openModal('wechat-modal'); closeModalById('download-modal');" class="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="text" placeholder="<span class="s1">您的姓名</span>" required class="w-full border border-gray-light p-3 focus:outline-none focus:border-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="email" placeholder="<span class="s1">邮箱地址</span>" required class="w-full border border-gray-light p-3 focus:outline-none focus:border-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="submit" class="btn-primary w-full py-3 text-sm font-bold uppercase"&gt;<span class="s1">提交并添加微信</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="wechat-modal" class="modal" onclick="closeModal(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content text-center" onclick="event.stopPropagation()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="close-btn" onclick="closeModalById('wechat-modal')"&gt;&amp;times;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="text-2xl font-bold mb-2"&gt;<span class="s1">扫码添加微信</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-gray-100 w-64 h-64 mx-auto mb-6 flex items-center justify-center border border-gray-light"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="text-gray-500 text-sm"&gt;<span class="s1">微信二维码</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-lg font-bold"&gt;<span class="s1">微信号：</span>your-wechat-id&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="contact-modal" class="modal" onclick="closeModal(event)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content" onclick="event.stopPropagation()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="close-btn" onclick="closeModalById('contact-modal')"&gt;&amp;times;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="text-2xl font-bold mb-2"&gt;<span class="s1">预约咨询</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;form onsubmit="event.preventDefault(); openModal('wechat-modal'); closeModalById('contact-modal');" class="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="text" placeholder="<span class="s1">您的姓名</span>" required class="w-full border border-gray-light p-3 focus:outline-none focus:border-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="tel" placeholder="<span class="s1">联系电话</span>" required class="w-full border border-gray-light p-3 focus:outline-none focus:border-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="submit" class="btn-primary w-full py-3 text-sm font-bold uppercase"&gt;<span class="s1">提交并添加微信</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js "&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var swiper = new Swiper(".mySwiper", {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>spaceBetween: 30,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>effect: "fade",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>loop: true,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>autoplay: { delay: 5000, disableOnInteraction: false },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>pagination: { el: ".swiper-pagination", clickable: true },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener('scroll', function() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const navbar = document.getElementById('navbar');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (window.scrollY &gt; 50) navbar.classList.add('nav-scrolled');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>else navbar.classList.remove('nav-scrolled');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function closeModalById(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = ''; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function closeModal(event) { if (event.target.classList.contains('modal')) { event.target.classList.remove('active'); document.body.style.overflow = ''; } }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
